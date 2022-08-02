@@ -14,6 +14,7 @@ import { StaticImage } from 'gatsby-plugin-image'
 const useStyles = makeStyles((theme) => ({
 	section: {
 		height: '90vh',
+		position: 'relative'
 	},
 	container: {
 		height: '100%',
@@ -28,16 +29,19 @@ const useStyles = makeStyles((theme) => ({
 	},
 	overlay: {
 		position: 'absolute',
-		backgroundColor: 'rgba(0,0,0,0.5)',
+		backgroundColor: 'rgba(0,0,0,0.45)',
 		height: '100%',
 		width: '100%',
 		zIndex: 2,
 	},
 	heroImage: {
 		position: 'absolute',
-		height: '100%',
+		height: '90%',
 		width: '100%',
 		zIndex: 1,
+	},
+	button: {
+		backgroundColor: 'rgba(0,0,0,0.3)',
 	}
 }))
 const HeroSection = () => {
@@ -45,11 +49,11 @@ const HeroSection = () => {
 	const [show, setShow] = useState(false)
 	useEffect(() => setShow(true), [])
 	return (
-		<Paper className={styles.section}>
-			<StaticImage className={styles.heroImage} src='https://images.unsplash.com/photo-1555979864-7a8f9b4fddf8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1471&q=80'/>
+		<Paper className={styles.section} id='about'>
+			<StaticImage className={styles.heroImage} src='https://images.unsplash.com/photo-1555979864-7a8f9b4fddf8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1471&q=80' alt='Vietnam beach and landscape'/>
 			<div className={styles.overlay}></div>
 			<Container className={styles.container} maxWidth='md'>
-				<Grid className={styles.content} container>
+				<Grid container className={styles.content}>
 					<Zoom in={show}>
 						<Grid item sm={8}>
 							<Typography component='h1' variant='h3'>
@@ -60,7 +64,7 @@ const HeroSection = () => {
 							</Typography>
 							<Box my={2}>
 								<Button href='mailto:benjamin.m.baron@gmail.com?subject=Hey Ben!' className={styles.button} variant='outlined' color='secondary'>
-									Get in touch!
+									Get in touch
 								</Button>
 							</Box>
 						</Grid>

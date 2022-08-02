@@ -4,21 +4,33 @@ import LinkedInIcon from '@material-ui/icons/LinkedIn'
 import Grid from '@material-ui/core/Grid'
 import IconButton from '@material-ui/core/IconButton'
 import Link from '@material-ui/core/Link'
+import { makeStyles } from '@material-ui/core/styles'
 
 const socialIcons = [
 	{icon: GithubIcon, url: ''},
 	{icon: LinkedInIcon, url: ''},
 ]
 
+const useStyles = makeStyles((theme) => ({
+	grid: {
+		display: 'flex',
+		justifyContent: 'center',
+		marginTop: '1rem'
+	},
+}))
+
 const Social = (props) => {
+	const styles = useStyles()
 	return (
-		<Grid container direction={props.direction || 'row'} spacing={1}>
+		<Grid container className={styles.grid} >
 				{socialIcons.map((item) => 
-				<Link>
-					<IconButton>
-						<item.icon fontSize='large' />
-					</IconButton>
-				</Link>
+					<Grid item className={styles.icon} key={Math.random()}>
+						<Link className={styles.icon}>
+							<IconButton>
+								<item.icon fontSize='large' />
+							</IconButton>
+						</Link>
+					</Grid>
 				)}
 		</Grid>
 	);

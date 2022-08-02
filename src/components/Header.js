@@ -16,9 +16,9 @@ import List from '@material-ui/core/List'
 import ListItem from '@material-ui/core/ListItem'
 
 const navigationLinks = [
-	{name: 'About', href: ''},
-	{name: 'Projects', href: ''},
-	{name: 'Resume', href: ''},
+	{name: 'About', href: '#about'},
+	{name: 'Projects', href: '#projects'},
+	{name: 'Resume', href: '/creddle resume 2.pdf'},
 ]
 
 const useStyles = makeStyles((theme) => ({
@@ -32,6 +32,8 @@ const useStyles = makeStyles((theme) => ({
 		marginRight: 'auto',
 		color: 'black',
 		backgroundColor: 'white',
+		height: 30,
+		width: 30,
 	},
 }))
 
@@ -52,6 +54,7 @@ const Header = () => {
 							variant='button'
 							underline='none'
 							href={item.href}
+							key={item.href}
 						>
 								{item.name}
 						</Link>
@@ -85,6 +88,7 @@ const Header = () => {
 							variant='button'
 							underline='none'
 							href={item.href}
+							key={item.name}
 						>
 								{item.name}
 						</Link>
