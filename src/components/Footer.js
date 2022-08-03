@@ -16,6 +16,7 @@ const useStyles = makeStyles((theme) => ({
 		alignItems: 'center',
 	},
 	grid: {
+		marginTop: '-1rem',
 		marginBottom: '1rem',
 	},
 }))

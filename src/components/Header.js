@@ -14,6 +14,8 @@ import Divider from '@material-ui/core/Divider'
 import ChevronRightIcon from '@material-ui/icons/ChevronRight'
 import List from '@material-ui/core/List'
 import ListItem from '@material-ui/core/ListItem'
+import Brightness7 from '@material-ui/icons/Brightness7'
+import Brightness2 from '@material-ui/icons/Brightness2'
 
 const navigationLinks = [
 	{name: 'About', href: '#about'},
@@ -41,6 +43,7 @@ const Header = (props) => {
 		<AppBar position='sticky' color='default'>
 		<Container maxWidth='md'>
 			<Toolbar disableGutters>
+				{props.darkMode ? <Brightness7/> : <Brightness2/>}
 				<Switch className={styles.switch} onClick={()=>props.setMode(!props.darkMode)}>B</Switch>
 				<Hidden xsDown>
 					{navigationLinks.map((item) => (

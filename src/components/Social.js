@@ -15,7 +15,7 @@ const useStyles = makeStyles((theme) => ({
 	grid: {
 		display: 'flex',
 		justifyContent: 'center',
-		marginTop: '1rem'
+		marginTop: '1rem',
 	},
 }))
 
