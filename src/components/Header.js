@@ -5,7 +5,7 @@ import { makeStyles } from '@material-ui/core/styles'
 import AppBar from '@material-ui/core/AppBar'
 import ToolBar from '@material-ui/core/ToolBar'
 import Container from '@material-ui/core/Container'
-import Avatar from '@material-ui/core/Avatar'
+import Switch from '@material-ui/core/Switch'
 import Hidden from '@material-ui/core/Hidden'
 import IconButton from '@material-ui/core/IconButton'
 import MenuIcon from '@material-ui/icons/Menu'
@@ -28,24 +28,20 @@ const useStyles = makeStyles((theme) => ({
 			transform: 'scale(1.1)',
 		}
 	},
-	avatar: {
+	switch: {
 		marginRight: 'auto',
-		color: 'black',
-		backgroundColor: 'white',
-		height: 30,
-		width: 30,
 	},
 }))
 
 
-const Header = () => {
+const Header = (props) => {
 	const styles = useStyles()
 	const [open, setOpen] = useState(false)
 	return (
 		<AppBar position='sticky' color='default'>
 		<Container maxWidth='md'>
 			<ToolBar disableGutters>
-				<Avatar className={styles.avatar}>B</Avatar>
+				<Switch className={styles.switch} onClick={()=>props.setMode(!props.darkMode)}>B</Switch>
 				<Hidden xsDown>
 					{navigationLinks.map((item) => (
 						<Link 

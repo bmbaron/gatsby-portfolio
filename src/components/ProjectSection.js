@@ -10,6 +10,8 @@ import CardMedia from '@material-ui/core/CardMedia'
 import CardContent from '@material-ui/core/CardContent'
 import Chip from '@material-ui/core/Chip'
 import Hidden from '@material-ui/core/Hidden'
+import OpenInNewIcon from '@material-ui/icons/OpenInNew';
+import IconButton from '@material-ui/core/IconButton'
 
 import homestayImage from '../images/thohomestay.png'
 import todoImage from '../images/todolist.png'
@@ -31,8 +33,8 @@ const projects = [
 		image: todoImage,
 	},
 	{
-		name: 'App that consumes APIs (built with a partner)',
-		description: 'Created with vanilla JS, CSS and HTML for an actual homestay business ',
+		name: 'App that consumes APIs',
+		description: 'Created with vanilla JS, CSS and HTML for an actual homestay business (built with a partner)',
 		url: 'https://bmbaron.github.io/air-quality-app',
 		tags: ['API', 'Webpack', 'JavaScript', 'HTML', 'CSS'],
 		image: airqualityImage,
@@ -55,14 +57,12 @@ const useStyles = makeStyles((theme) => ({
 		justifyContent: 'center',
 		alignItems: 'center',
 	},
-	link: {
-    color: "#00ff00",
-    "&:hover": {
-        color: "white",
-        textDecoration: "none"
-    }
-	},
 	project: {
+		alignItems: 'center',
+	},
+	cardBottom: {
+		display: 'flex',
+		justifyContent: 'space-between',
 		alignItems: 'center',
 	},
 	chip: {
@@ -73,11 +73,14 @@ const useStyles = makeStyles((theme) => ({
 		justifyContent: 'space-around'
 	},
 	cardImage: {
-		width: '40%',
+		width: '35%',
 		height: 'auto',
+	},
+	projectLink: {
+		marginRight: 'auto',
 	}
 }))
-const ProjectSection = () => {
+const ProjectSection = (props) => {
 	const styles = useStyles()
 	return (
 			<Container className={styles.container} maxWidth='md' id='projects'>
@@ -87,17 +90,23 @@ const ProjectSection = () => {
 				<Grid container className={styles.content} direction='column' spacing={4}>
 					{projects.map((project) => (
 						<Grid item sm={12} key={project.url}>
-							<Card variant='outlined' className={styles.card}>
+							<Card className={styles.card}>
 								<CardContent className={styles.cardChild1}> 
 										<Box className={styles.project}>
-											<Link href={project.url} className={styles.link}>
-												<Typography variant='h5' paragraph>{project.name}</Typography>
-											</Link>
+											<Typography variant='h5' paragraph>{project.name}</Typography>
 											<Typography variant='subtitle1' paragraph>{project.description}</Typography>
-											{project.tags.map((tag) => (
-												<Chip className={styles.chip} label={tag} variant='outlined' key={Math.random()} />
-											))
-											}
+											<Container className={styles.cardBottom}>
+												<Container className={styles.tags}>
+													{project.tags.map((tag) => (
+														<Chip className={styles.chip} label={tag} key={Math.random()} />
+													))}
+												</Container>
+												<Link href={project.url}>
+													<IconButton>
+														<OpenInNewIcon fontSize='large'/>
+													</IconButton>
+												</Link>
+											</Container>
 										</Box>
 								</CardContent>
 								<Hidden xsDown>

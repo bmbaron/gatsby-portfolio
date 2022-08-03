@@ -42,6 +42,9 @@ const useStyles = makeStyles((theme) => ({
 	},
 	button: {
 		backgroundColor: 'rgba(0,0,0,0.3)',
+	},
+	alwaysWhite: {
+		color: 'white'
 	}
 }))
 const HeroSection = () => {
@@ -56,10 +59,13 @@ const HeroSection = () => {
 				<Grid container className={styles.content}>
 					<Zoom in={show}>
 						<Grid item sm={8}>
-							<Typography component='h1' variant='h3'>
-								Hi, my name is Ben. I'm a web developer based in Vietnam.
+							<Typography className={styles.alwaysWhite} component='h1' variant='h3' gutterBottom>
+								Hi, my name is Ben.
 							</Typography>
-							<Typography variant='h5'>
+							<Typography className={styles.alwaysWhite} component='h1' variant='h4' gutterBottom>
+								I'm a web developer based in Vietnam.
+							</Typography>
+							<Typography className={styles.alwaysWhite} variant='h6'>
 								I build responsive websites.
 							</Typography>
 							<Box my={2}>
@@ -71,7 +77,7 @@ const HeroSection = () => {
 					</Zoom>
 					<Hidden xsDown>
 						<Grid item>
-							<Social direction='column' />
+							<Social setColor='white' />
 						</Grid>
 					</Hidden>
 				</Grid>

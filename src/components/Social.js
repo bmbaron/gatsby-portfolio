@@ -7,7 +7,7 @@ import Link from '@material-ui/core/Link'
 import { makeStyles } from '@material-ui/core/styles'
 
 const socialIcons = [
-	{icon: GithubIcon, url: ''},
+	{icon: GithubIcon, url: 'https://github.com/bmbaron'},
 	{icon: LinkedInIcon, url: ''},
 ]
 
@@ -25,9 +25,9 @@ const Social = (props) => {
 		<Grid container className={styles.grid} >
 				{socialIcons.map((item) => 
 					<Grid item className={styles.icon} key={Math.random()}>
-						<Link className={styles.icon}>
+						<Link className={styles.icon} href={item.url}>
 							<IconButton>
-								<item.icon fontSize='large' />
+								<item.icon fontSize='large' style={{color: props.setColor}}/>
 							</IconButton>
 						</Link>
 					</Grid>

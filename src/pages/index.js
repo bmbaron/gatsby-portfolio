@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { createTheme, ThemeProvider } from '@material-ui/core/styles'
 import CssBaseline from '@material-ui/core/CssBaseline'
 import HeroSection from '../components/HeroSection'
@@ -6,22 +6,24 @@ import Header from '../components/Header'
 import ProjectSection from '../components/ProjectSection'
 import Footer from '../components/Footer'
 
-const darkTheme = createTheme({
-  palette: {
-    type: 'dark',
-  },
-})
 
-function indexPage() {
+function IndexPage() {
+  const [darkMode, setDarkMode] = useState(true)
+  const darkTheme = createTheme({
+    palette: {
+      type: darkMode ? 'dark' : 'light'
+    },
+  })
+
   return (
     <ThemeProvider theme={darkTheme}>
       <CssBaseline />
-      <Header />
+      <Header setMode={setDarkMode} darkMode={darkMode} />
       <HeroSection /> 
-      <ProjectSection /> 
+      <ProjectSection darkMode={darkMode} /> 
       <Footer />
     </ThemeProvider>
   )
 }
 
-export default indexPage;
+export default IndexPage;
