@@ -3,6 +3,7 @@ module.exports = {
     title: `Portfolio Gatsby`,
     siteUrl: `https://www.yourdomain.tld`
   },
+  pathPrefix: "/gatsby-portfolio",
   plugins: ["gatsby-plugin-image", "gatsby-plugin-sharp", "gatsby-transformer-sharp", {
     resolve: 'gatsby-source-filesystem',
     options: {
