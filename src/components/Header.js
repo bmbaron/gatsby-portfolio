@@ -3,7 +3,7 @@ import Social from './Social'
 import Link from '@material-ui/core/Link'
 import { makeStyles } from '@material-ui/core/styles'
 import AppBar from '@material-ui/core/AppBar'
-import ToolBar from '@material-ui/core/ToolBar'
+import Toolbar from '@material-ui/core/Toolbar'
 import Container from '@material-ui/core/Container'
 import Switch from '@material-ui/core/Switch'
 import Hidden from '@material-ui/core/Hidden'
@@ -40,7 +40,7 @@ const Header = (props) => {
 	return (
 		<AppBar position='sticky' color='default'>
 		<Container maxWidth='md'>
-			<ToolBar disableGutters>
+			<Toolbar disableGutters>
 				<Switch className={styles.switch} onClick={()=>props.setMode(!props.darkMode)}>B</Switch>
 				<Hidden xsDown>
 					{navigationLinks.map((item) => (
@@ -61,7 +61,7 @@ const Header = (props) => {
 						<MenuIcon onClick={() => setOpen(true)} />
 					</IconButton>
 				</Hidden>
-			</ToolBar>
+			</Toolbar>
 		</Container>
 		<SwipeableDrawer 
 			anchor='right'
