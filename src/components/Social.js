@@ -8,7 +8,7 @@ import { makeStyles } from '@material-ui/core/styles'
 
 const socialIcons = [
 	{icon: GithubIcon, url: 'https://github.com/bmbaron'},
-	{icon: LinkedInIcon, url: ''},
+	{icon: LinkedInIcon, url: 'https://www.linkedin.com/in/benjamin-baron-850b264a/'},
 ]
 
 const useStyles = makeStyles((theme) => ({
@@ -25,7 +25,7 @@ const Social = (props) => {
 		<Grid container className={styles.grid} >
 				{socialIcons.map((item) => 
 					<Grid item className={styles.icon} key={Math.random()}>
-						<Link className={styles.icon} href={item.url}>
+						<Link className={styles.icon} href={item.url} target="_blank">
 							<IconButton>
 								<item.icon fontSize='large' style={{color: props.setColor}}/>
 							</IconButton>
