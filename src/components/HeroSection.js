@@ -36,12 +36,13 @@ const useStyles = makeStyles((theme) => ({
 	},
 	heroImage: {
 		position: 'absolute',
-		height: '90%',
+		height: '100%',
 		width: '100%',
 		zIndex: 1,
 	},
 	button: {
-		backgroundColor: 'rgba(0,0,0,0.3)',
+		backgroundColor: "#00e64d",
+		color: 'black',
 	},
 	alwaysWhite: {
 		color: 'white'
@@ -69,7 +70,7 @@ const HeroSection = () => {
 								I build responsive websites.
 							</Typography>
 							<Box my={2}>
-								<Button href='mailto:benjamin.m.baron@gmail.com?subject=Hey Ben!' className={styles.button} variant='outlined' color='secondary'>
+								<Button href='mailto:benjamin.m.baron@gmail.com?subject=Hey Ben!' className={styles.button} variant='contained' >
 									Get in touch
 								</Button>
 							</Box>
@@ -77,7 +78,7 @@ const HeroSection = () => {
 					</Zoom>
 					<Hidden xsDown>
 						<Grid item>
-							<Social setColor='white' />
+							<Social setColor="white" />
 						</Grid>
 					</Hidden>
 				</Grid>

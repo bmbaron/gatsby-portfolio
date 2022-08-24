@@ -8,7 +8,7 @@ import Footer from '../components/Footer'
 
 
 function IndexPage() {
-  const [darkMode, setDarkMode] = useState(true)
+  const [darkMode, setDarkMode] = useState(false)
   const darkTheme = createTheme({
     palette: {
       type: darkMode ? 'dark' : 'light'

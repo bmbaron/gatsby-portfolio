@@ -30,7 +30,7 @@ const Footer = () => {
 					<Grid container>
 						<Grid item className={styles.grid} xs={12}>
 							<Box>
-								<Social />
+								<Social setColor="#f50057"/>
 							</Box>
 						</Grid>
 						<Hidden xsDown>

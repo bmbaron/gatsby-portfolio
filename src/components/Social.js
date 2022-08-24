@@ -27,7 +27,7 @@ const Social = (props) => {
 					<Grid item className={styles.icon} key={Math.random()}>
 						<Link className={styles.icon} href={item.url} target="_blank">
 							<IconButton>
-								<item.icon fontSize='large' style={{color: props.setColor}}/>
+								<item.icon fontSize='large' style={{color: props.setColor}} />
 							</IconButton>
 						</Link>
 					</Grid>
